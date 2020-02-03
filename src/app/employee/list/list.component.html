@@ -1,0 +1,8 @@
+<h1 style="text-align: center">Employee List</h1>
+
+<a (click)="insertForm()" routerLink="add" class="button"><i class="glyphicon glyphicon-plus"></i>
+    Add New</a>
+
+<app-table [dataObject]="employeeData" (sendMsg)='viewMsg($event)'></app-table>
+
+<app-pop-up-model></app-pop-up-model>

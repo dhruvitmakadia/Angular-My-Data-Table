@@ -1,0 +1,64 @@
+{
+  "department": [
+    "Developer",
+    "Accountant",
+    "Software Engineer"
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Dhruvit",
+      "email": "dhruvit@gmail.com",
+      "mobile": 9426877444,
+      "address": "Mograwadi Valsad Gujarat 396001",
+      "gender": "male",
+      "department": "Developer",
+      "hireDate": "2020-01-09",
+      "permanentEmployee": true
+    },
+    {
+      "name": "Amit",
+      "email": "amit@gmail.com",
+      "mobile": "8989585868",
+      "address": "Gundlav,Valsad,Gujarat,396001",
+      "gender": "male",
+      "department": "Software Engineer",
+      "hireDate": "2020-02-06",
+      "permanentEmployee": false,
+      "id": 2
+    },
+    {
+      "name": "Tapas",
+      "email": "tapas@gmail.com",
+      "mobile": "7854696325",
+      "address": "Halar Road",
+      "gender": "male",
+      "department": "Accountant",
+      "hireDate": "2019-12-31",
+      "permanentEmployee": false,
+      "id": 3
+    },
+    {
+      "name": "Kiran",
+      "email": "kiran",
+      "mobile": "7854123698",
+      "address": "Khergam Valsad",
+      "gender": "male",
+      "department": "Developer",
+      "hireDate": "2019-12-17",
+      "permanentEmployee": true,
+      "id": 4
+    },
+    {
+      "name": "Aastha",
+      "email": "aastha@gmail.com",
+      "mobile": "9856412369",
+      "address": "Bilimora",
+      "gender": "female",
+      "department": "Software Engineer",
+      "hireDate": "2020-01-15",
+      "permanentEmployee": false,
+      "id": 5
+    }
+  ]
+}
