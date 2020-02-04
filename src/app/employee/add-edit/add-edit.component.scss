@@ -22,9 +22,19 @@ input[type=text], select, input[type=date] {
   input[type=submit]:hover {
     background-color: rgb(172, 2, 172);
   }
-  
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+
+  input[type=submit]:disabled {
+    background-color: rgb(161, 91, 161);
+    cursor: not-allowed;
   }
+  
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}

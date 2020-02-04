@@ -10,19 +10,19 @@
         <th (click)="sort('mobile')">Mobile
             <span class="glyphicon sort-icon" *ngIf="key =='mobile'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
-        <th (click)="sort('address')">Address
-            <span class="glyphicon sort-icon" *ngIf="key =='address'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        <th (click)="sort('addresses')">Address
+            <span class="glyphicon sort-icon" *ngIf="key =='addresses'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th (click)="sort('department')">Department
             <span class="glyphicon sort-icon" *ngIf="key =='department'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th>Action</th>
     </tr>
-    <tr *ngFor="let data of dataObject | async | sort: key : reverse | search:'name,email,mobile,address,department':query">
+    <tr *ngFor="let data of dataObject | async | sort: key : reverse | search:'name,email,mobile,addresses,department':query">
         <td>{{data.name}}</td>
         <td>{{data.email}}</td>
         <td>{{data.mobile}}</td>
-        <td>{{data.address}}</td>
+        <td><span *ngFor="let address of data.addresses">=> {{address.street}} {{address.city}} {{address.state}} {{address.postcode}} <br></span></td>
         <td>{{data.department}}</td>
         <td>
             <a (click)="edit(data.id)" style="cursor: pointer"><i class="glyphicon glyphicon-pencil"

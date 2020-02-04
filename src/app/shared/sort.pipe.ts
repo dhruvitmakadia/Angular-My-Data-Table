@@ -7,7 +7,7 @@ export class SortPipe implements PipeTransform {
 
   /**
    * @param value data that have to sort
-   * @param expression expreion of data: text,mobile
+   * @param expression name of the field: name, mobile, email etc
    * @param reverse flag represent reverse or not
    */
   transform(value: any[], expression?: any, reverse?: boolean): any {

@@ -25,7 +25,9 @@ export class AddEditComponent implements OnInit {
     name: ['', [Validators.required]],
     email: ['', Validators.required],
     mobile: ['', [Validators.required]],
-    address: ['', Validators.required],
+    addresses: this.fb.array([
+      this.initAddress(),
+    ]),
     gender: ['', Validators.required],
     department: ['', Validators.required],
     hireDate: ['', Validators.required],
@@ -38,11 +40,18 @@ export class AddEditComponent implements OnInit {
       this.id = this.router.snapshot.paramMap.get('id');
       this.api.getOneEmployeeData(this.id).subscribe(data => {
         this.employee = data;
+        console.log(this.employee);
+
         this.employeeAddForm.setValue({
           name: this.employee.name,
           email: this.employee.email,
           mobile: this.employee.mobile,
-          address: this.employee.address,
+          addresses: [{
+            street: this.employee.addresses[0].street,
+            city: this.employee.addresses[0].city,
+            state: this.employee.addresses[0].state,
+            postcode: this.employee.addresses[0].postcode
+          }],
           gender: this.employee.gender,
           department: this.employee.department,
           hireDate: this.employee.hireDate,
@@ -50,6 +59,37 @@ export class AddEditComponent implements OnInit {
         });
       });
     }
+  }
+
+  get ef() { return this.employeeAddForm.controls; }
+
+  /**
+   * Initiate address form group
+   */
+  initAddress() {
+    return this.fb.group({
+      street: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      postcode: ['', [Validators.required]]
+    });
+  }
+
+  /**
+   * To add more address to form
+   */
+  addAddress() {
+    const control = this.employeeAddForm.controls.addresses as FormArray;
+    control.push(this.initAddress());
+  }
+
+  /**
+   * To remove address from form
+   * @param i index of address contrrol to remove
+   */
+  removeAddress(i: number) {
+    const control = this.employeeAddForm.controls.addresses as FormArray;
+    control.removeAt(i);
   }
 
   /**
