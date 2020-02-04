@@ -49,7 +49,7 @@
     },
     {
       "name": "Kiran",
-      "email": "kiran",
+      "email": "kiran@gmail.com",
       "mobile": "8547569325",
       "addresses": [
         {
@@ -85,17 +85,11 @@
     },
     {
       "name": "Tapas",
-      "email": "tapas",
+      "email": "tapas@gmail.com",
       "mobile": "8877965844",
       "addresses": [
         {
           "street": "Halar Road",
-          "city": "Valsad",
-          "state": "Gujarat",
-          "postcode": "396001"
-        },
-        {
-          "street": "Halar Lake",
           "city": "Valsad",
           "state": "Gujarat",
           "postcode": "396001"
