@@ -18,6 +18,16 @@ input[type=text], select, input[type=date] {
     border-radius: 4px;
     cursor: pointer;
   }
+  input[type=reset] {
+    width: 100%;
+    background-color: purple;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   
   input[type=submit]:hover {
     background-color: rgb(172, 2, 172);

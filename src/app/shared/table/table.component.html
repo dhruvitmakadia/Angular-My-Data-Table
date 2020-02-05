@@ -18,7 +18,7 @@
         </th>
         <th>Action</th>
     </tr>
-    <tr *ngFor="let data of dataObject | async | sort: key : reverse | search:'name,email,mobile,addresses,department':query">
+    <tr *ngFor="let data of dataObject | async | search:'name,email,mobile,addresses,department':query | sort: key : reverse">
         <td>{{data.name}}</td>
         <td>{{data.email}}</td>
         <td>{{data.mobile}}</td>
