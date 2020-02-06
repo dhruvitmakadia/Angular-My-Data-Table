@@ -7,14 +7,15 @@ import { PopUpModelComponent } from './pop-up-model/pop-up-model.component';
 import { SearchPipe } from './search.pipe';
 import { FormsModule } from '@angular/forms';
 import { SortPipe } from './sort.pipe';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [TableComponent, PopUpModelComponent, SearchPipe, SortPipe],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   exports: [TableComponent, PopUpModelComponent]
 })

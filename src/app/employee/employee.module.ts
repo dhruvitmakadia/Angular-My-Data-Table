@@ -6,6 +6,8 @@ import { ListComponent } from './list/list.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [ListComponent, AddEditComponent],
@@ -13,7 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     EmployeeRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class EmployeeModule { }

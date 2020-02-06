@@ -1,28 +1,38 @@
-<input type="text" [(ngModel)]="query" placeholder="Search..">
+<div id="wrap">
+    <input id="search" [(ngModel)]="query" type="text" placeholder="What're we looking for ?" style="font-size: 20px;">
+    <input id="search_submit" value="Rechercher" type="submit" style="font-size: 20px;">
+</div>
 <table>
     <tr>
         <th (click)="sort('name')">Full Name
-            <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            <span class="glyphicon sort-icon" *ngIf="key =='name'"
+                [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th (click)="sort('email')">Email
-            <span class="glyphicon sort-icon" *ngIf="key =='email'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            <span class="glyphicon sort-icon" *ngIf="key =='email'"
+                [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th (click)="sort('mobile')">Mobile
-            <span class="glyphicon sort-icon" *ngIf="key =='mobile'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            <span class="glyphicon sort-icon" *ngIf="key =='mobile'"
+                [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th (click)="sort('addresses')">Address
-            <span class="glyphicon sort-icon" *ngIf="key =='addresses'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            <span class="glyphicon sort-icon" *ngIf="key =='addresses'"
+                [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th (click)="sort('department')">Department
-            <span class="glyphicon sort-icon" *ngIf="key =='department'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            <span class="glyphicon sort-icon" *ngIf="key =='department'"
+                [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
         </th>
         <th>Action</th>
     </tr>
-    <tr *ngFor="let data of dataObject | async | sort: key : reverse | search:'name,email,mobile,addresses,department':query">
+    <tr
+        *ngFor="let data of dataObject | async | search:'name,email,mobile,addresses,department':query | sort: key : reverse">
         <td>{{data.name}}</td>
         <td>{{data.email}}</td>
         <td>{{data.mobile}}</td>
-        <td><span *ngFor="let address of data.addresses">=> {{address.street}} {{address.city}} {{address.state}} {{address.postcode}} <br></span></td>
+        <td><span *ngFor="let address of data.addresses">=> {{address.street}} {{address.city}} {{address.state}}
+                {{address.postcode}} <br></span></td>
         <td>{{data.department}}</td>
         <td>
             <a (click)="edit(data.id)" style="cursor: pointer"><i class="glyphicon glyphicon-pencil"
@@ -33,3 +43,5 @@
         </td>
     </tr>
 </table>
+
+<br><br>
